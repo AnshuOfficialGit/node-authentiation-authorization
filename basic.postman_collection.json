@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "2c2ef39c-59cc-450a-8848-4d4c8f02f621",
+		"name": "basic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30972723",
+		"_collection_link": "https://yalla-driver-admin-api.postman.co/workspace/Event-Management~e7919b3b-b35a-4330-8f54-840df4f569c7/collection/30972723-2c2ef39c-59cc-450a-8848-4d4c8f02f621?action=share&source=collection_link&creator=30972723"
+	},
+	"item": [
+		{
+			"name": "authorization",
+			"item": [
+				{
+					"name": "roles",
+					"item": [
+						{
+							"name": "create(create-role)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Customer\",\r\n    \"description\":\"This is Customer Role\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/roles/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"roles",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list (all-role)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4500/api/roles/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"roles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "details(single-role)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4500/api/roles/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"roles",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update(role-update)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Admin\",\r\n    \"role_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/roles/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"roles",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroy(delete-role)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4500/api/roles/destory/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"roles",
+										"destory",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "permission",
+					"item": [
+						{
+							"name": "create(create-permission)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Update User\",\r\n    \"description\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/permission/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"permission",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list (all-permission)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4500/api/permission/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"permission",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "details (single-permission)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4500/api/permission/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"permission",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destory (delete-permission)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4500/api/permission/destory/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"permission",
+										"destory",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update(update-permission)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Read User\",\r\n    \"description\":\"\",\r\n    \"permission_id\":2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/permission/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"permission",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "assignment",
+					"item": [
+						{
+							"name": "create(create-permission-assignment)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"role_id\":\"2\",\r\n    \"permission_ids\":[2,3,4]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/assignment/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"assignment",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update(update-permission-assignment)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjMwODM3fQ.jJpDtFQ4jbABCRAM1mHzqOwjvrLo35HBHWA0XTu2z1U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"role_id\":\"2\",\r\n    \"permission_ids\":[2,3,4]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/assignment/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"assignment",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4500/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4500",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
